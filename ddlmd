@@ -8,7 +8,7 @@
    <component name="ChangeListManager">[m
 [31m-    <list default="true" id="ec8889de-7d0e-4093-af14-284549cee93e" name="Changes" comment="" />[m
 [32m+[m[32m    <list default="true" id="ec8889de-7d0e-4093-af14-284549cee93e" name="Changes" comment="">[m
-[32m+[m[32m      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />[m
+[32m+[m[32m      <change beforePath="$PROJECT_DIR$/src/DayOfBirth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DayOfBirth.java" afterDir="false" />[m
 [32m+[m[32m    </list>[m
      <option name="SHOW_DIALOG" value="false" />[m
      <option name="HIGHLIGHT_CONFLICTS" value="true" />[m
@@ -30,7 +30,7 @@
 [32m+[m[32m    <property name="nodejs_package_manager_path" value="npm" />[m
    </component>[m
    <component name="RunManager">[m
-     <configuration name="Main" type="Application" factoryName="Application" temporary="true">[m
+     <configuration name="DayOfBirth" type="Application" factoryName="Application" temporary="true">[m
 [36m@@ -98,9 +104,13 @@[m
        <option name="number" value="Default" />[m
        <option name="presentableId" value="Default" />[m
@@ -45,15 +45,15 @@
    <component name="com.vaadin.designer2.intellij.settings.SizePresetsSettingsComponent">[m
      <option name="sizePresets">[m
        <list>[m
-[1mdiff --git a/out/production/SCD-Assignment-02/Main.class b/out/production/SCD-Assignment-02/Main.class[m
+[1mdiff --git a/out/production/SCD-Assignment-02/DayOfBirth.class b/out/production/SCD-Assignment-02/DayOfBirth.class[m
 [1mindex 7540df3..7e828fe 100644[m
-Binary files a/out/production/SCD-Assignment-02/Main.class and b/out/production/SCD-Assignment-02/Main.class differ
-[1mdiff --git a/src/Main.java b/src/Main.java[m
+Binary files a/out/production/SCD-Assignment-02/DayOfBirth.class and b/out/production/SCD-Assignment-02/DayOfBirth.class differ
+[1mdiff --git a/src/DayOfBirth.java b/src/DayOfBirth.java[m
 [1mindex 6cdd6db..6ed3ff9 100644[m
-[1m--- a/src/Main.java[m
-[1m+++ b/src/Main.java[m
+[1m--- a/src/DayOfBirth.java[m
+[1m+++ b/src/DayOfBirth.java[m
 [36m@@ -1,6 +1,14 @@[m
- public class Main {[m
+ public class DayOfBirth {[m
  [m
 [32m+[m[32m    public <T> void cout(T a){[m
 [32m+[m[32m        System.out.println(a);[m
@@ -61,7 +61,7 @@ Binary files a/out/production/SCD-Assignment-02/Main.class and b/out/production/
 [32m+[m
      public static void main(String[] args) {[m
 [31m-        System.out.println("Initialized the project");[m
-[32m+[m[32m        Main m = new Main();[m
+[32m+[m[32m        DayOfBirth m = new DayOfBirth();[m
 [32m+[m[32m        m.cout("Sallam");[m
 [32m+[m[32m        m.cout(1);[m
 [32m+[m[32m        m.cout('s');[m
