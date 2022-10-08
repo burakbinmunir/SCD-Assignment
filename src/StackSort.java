@@ -38,11 +38,23 @@ public class StackSort {
         while(!stack.isEmpty()){
             int element = stack.pop();
 
-            while(sortedStack.peek() > element && !sortedStack.isEmpty()){
-                stack.push(sortedStack.pop());
+            if (sortedStack.isEmpty()){
+                sortedStack.push(element);
             }
-            sortedStack.push(element);
+            else {
 
+
+                if (element > sortedStack.peek()  ){
+                    sortedStack.push(element);
+                }
+                else {
+
+                    while(sortedStack.peek() > element && !sortedStack.isEmpty()){
+                        stack.push(sortedStack.pop());
+                    }
+
+                }
+            }
         }
 
         return sortedStack;
@@ -55,9 +67,8 @@ public class StackSort {
         Stack<Integer> stck =sortStack.sortStack();
 
         System.out.println("Printing sorted stack");
-
-        while (!stck.isEmpty()){
-            System.out.println(stck.pop());
+        for (int num : stck){
+            System.out.println(num);
         }
 
         // 34 3 31 98 92 23

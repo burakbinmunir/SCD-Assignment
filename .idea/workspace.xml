@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec8889de-7d0e-4093-af14-284549cee93e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/StackSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SCD-Assignment-02/StackSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SCD-Assignment-02/StackSort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StackSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StackSort.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +135,7 @@
       <updated>1664913643837</updated>
       <workItem from="1664913645136" duration="867000" />
       <workItem from="1664958494347" duration="1084000" />
-      <workItem from="1665248107978" duration="6118000" />
+      <workItem from="1665248107978" duration="6419000" />
     </task>
     <servers />
   </component>
