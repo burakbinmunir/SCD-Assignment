@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ec8889de-7d0e-4093-af14-284549cee93e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SCD-Assignment-02/StackSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SCD-Assignment-02/StackSort.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SCD-Assignment-02/StopWords.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SCD-Assignment-02/StopWords.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StopWords.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StopWords.java" afterDir="false" />
     </list>
@@ -153,7 +152,8 @@
       <updated>1664913643837</updated>
       <workItem from="1664913645136" duration="867000" />
       <workItem from="1664958494347" duration="1084000" />
-      <workItem from="1665248107978" duration="9363000" />
+      <workItem from="1665248107978" duration="9413000" />
+      <workItem from="1665314428957" duration="1596000" />
     </task>
     <servers />
   </component>
@@ -175,24 +175,6 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/StopWords.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/StopWords.java</url>
-          <line>35</line>
-          <properties class="StopWords" method="print">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="story.length()" language="JAVA" />

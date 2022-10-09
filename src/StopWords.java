@@ -1,12 +1,16 @@
 import java.util.*;
 public class StopWords {
 
-    private String[] stopWords;
+    private ArrayList<String> stopWords;
     private HashMap<String,Integer> stopMap;
 
     StopWords(){
-        stopWords = new String[]{"was", "has"};
+        stopWords = new ArrayList<String>();
         stopMap = new HashMap<String,Integer>();
+    }
+
+    void addStopWord(String stopWord){
+        stopWords.add(stopWord);
     }
 
     void findStopWords(String story){
@@ -33,14 +37,16 @@ public class StopWords {
 
     }
 
-    void print(){
-        for (int i=0 ; i < stopMap.size(); i++){
-           System.out.println("Stop word: " + /*stop word*/ + stopMap.get("was"));
-        }
+    void print() {
+       for(String stopWord: stopWords){
+           System.out.println("Word: " + stopWord+ " " + stopMap.get(stopWord));
+       }
     }
 
     public static void main(String[] args) {
         StopWords sw = new StopWords();
+        sw.addStopWord("was");
+        sw.addStopWord("He");
         sw.findStopWords("He was was happy");
         sw.print();
     }
