@@ -39,19 +39,29 @@ public class QuickSort {
     }
 
     public int divideArray(int lowIndex, int highIndex){
-        int i = lowIndex -1;
-        int pivot = array.get(highIndex);
+        int i = lowIndex;
+        int j = highIndex;
+        int pivot = array.get(lowIndex);
 
 
-        for(int j = lowIndex; j < highIndex; j++){
-           if (array.get(j) <= pivot){
-               i++;
-               Collections.swap(array, i, j);
+        while (i < j) {
+
+            do {
+                i++;
+            } while (array.get(i) <= pivot);
+
+            do {
+                j--;
+            }
+            while (array.get(j) > pivot);
+
+            if (i < j) {
+                Collections.swap(array, i, j);
             }
         }
-        Collections.swap(array, highIndex, i+1);
+        Collections.swap(array, lowIndex, j);
 
-        return i +1 ;
+        return i;
     }
 
     public void quickSort(int lowIndex, int highIndex){
