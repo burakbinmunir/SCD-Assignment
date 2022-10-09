@@ -38,51 +38,53 @@ public class QuickSort {
         }
     }
 
-    public int divideArray(int lowIndex, int highIndex){
-        int i = lowIndex;
-        int j = highIndex;
-        int pivot = array.get(lowIndex);
+    int partition( int lowIndex, int highIndex) {
 
+        int pivot = array.get(highIndex);
 
-        while (i < j) {
+        int i = lowIndex - 1;
 
-            do {
+        // traverse through all elements
+        // compare each element with pivot
+        for (int j = lowIndex; j < highIndex; j++) {
+
+            if (array.get(j) <= pivot) {
                 i++;
-            } while (array.get(i) <= pivot);
 
-            do {
-                j--;
+                int temp = array.get(i);
+                array.set(i, array.get(j));
+                array.set(j, temp);
             }
-            while (array.get(j) > pivot);
 
-            if (i < j) {
-                Collections.swap(array, i, j);
-            }
         }
-        Collections.swap(array, lowIndex, j);
 
-        return i;
+
+        int temp = array.get(i + 1);
+        array.set(i + 1, array.get(highIndex));
+        array.set(highIndex, temp);
+
+        return (i + 1);
     }
 
-    public void quickSort(int lowIndex, int highIndex){
-        if (lowIndex < highIndex){
+    void quickSort( int lowIndex, int highIndex) {
+        if (lowIndex < highIndex) {
+            int pivot = partition(lowIndex, highIndex);
 
-            int pivot = divideArray(lowIndex,highIndex);
-            divideArray(lowIndex,pivot-1);
-            divideArray(pivot+1,highIndex);
+            quickSort( lowIndex, pivot - 1);
+            quickSort( pivot + 1, highIndex);
         }
     }
-    
-    public void sortArray(){ // sorting will be done using quick sort element
-        quickSort(0, array.size()-1);
-        printArray();
-        
+
+    public void sortArray(){
+        quickSort(0,array.size()-1);
     }
+
 
     public static void main(String[] args) {
         QuickSort quickSort = new QuickSort();
         quickSort.inputArray();
-       // quickSort.printArray();
+
         quickSort.sortArray();
+         quickSort.printArray();
     }
 }

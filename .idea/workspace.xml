@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec8889de-7d0e-4093-af14-284549cee93e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/QuickSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SCD-Assignment-02/QuickSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SCD-Assignment-02/QuickSort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuickSort.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +161,7 @@
       <workItem from="1664913645136" duration="867000" />
       <workItem from="1664958494347" duration="1084000" />
       <workItem from="1665248107978" duration="9413000" />
-      <workItem from="1665314428957" duration="5350000" />
+      <workItem from="1665314428957" duration="6880000" />
     </task>
     <servers />
   </component>
@@ -182,9 +183,24 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/QuickSort.java</url>
+          <line>135</line>
+          <properties class="QuickSort">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="story.length()" language="JAVA" />
+        <watch expression="array.get(i)" language="JAVA" />
+        <watch expression="array.size()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
