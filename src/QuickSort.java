@@ -38,16 +38,12 @@ public class QuickSort {
         }
     }
 
-    int partition( int lowIndex, int highIndex) {
+    int divideArray( int lowIndex, int highIndex) {
 
         int pivot = array.get(highIndex);
+        int i = (lowIndex - 1);
 
-        int i = lowIndex - 1;
-
-        // traverse through all elements
-        // compare each element with pivot
         for (int j = lowIndex; j < highIndex; j++) {
-
             if (array.get(j) <= pivot) {
                 i++;
 
@@ -58,7 +54,6 @@ public class QuickSort {
 
         }
 
-
         int temp = array.get(i + 1);
         array.set(i + 1, array.get(highIndex));
         array.set(highIndex, temp);
@@ -67,24 +62,25 @@ public class QuickSort {
     }
 
     void quickSort( int lowIndex, int highIndex) {
-        if (lowIndex < highIndex) {
-            int pivot = partition(lowIndex, highIndex);
 
+        if (lowIndex < highIndex) {
+            int pivot = divideArray(lowIndex, highIndex);
+
+            // recursively sorting the partitioned parts of array
             quickSort( lowIndex, pivot - 1);
             quickSort( pivot + 1, highIndex);
         }
     }
 
-    public void sortArray(){
-        quickSort(0,array.size()-1);
+    public void sortArray(){  // sorting will be done using quick sort element
+        quickSort(0, array.size()-1);
+        printArray();
     }
-
 
     public static void main(String[] args) {
         QuickSort quickSort = new QuickSort();
         quickSort.inputArray();
-
+       // quickSort.printArray();
         quickSort.sortArray();
-         quickSort.printArray();
     }
 }
