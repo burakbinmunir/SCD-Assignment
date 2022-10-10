@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec8889de-7d0e-4093-af14-284549cee93e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/CountSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Balance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +100,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RunManager" selected="Application.CountSort">
+  <component name="RunManager" selected="Application.Balance">
+    <configuration name="Balance" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Balance" />
+      <module name="SCD-Assignment-02" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ContiguousSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ContiguousSum" />
       <module name="SCD-Assignment-02" />
@@ -122,13 +129,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StackSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="StackSort" />
-      <module name="SCD-Assignment-02" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="StopWords" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="StopWords" />
       <module name="SCD-Assignment-02" />
@@ -138,11 +138,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Balance" />
         <item itemvalue="Application.CountSort" />
         <item itemvalue="Application.ContiguousSum" />
         <item itemvalue="Application.QuickSort" />
         <item itemvalue="Application.StopWords" />
-        <item itemvalue="Application.StackSort" />
       </list>
     </recent_temporary>
   </component>
@@ -159,7 +159,7 @@
       <workItem from="1665248107978" duration="9413000" />
       <workItem from="1665314428957" duration="8187000" />
       <workItem from="1665402456521" duration="2553000" />
-      <workItem from="1665425247005" duration="1332000" />
+      <workItem from="1665425247005" duration="4087000" />
     </task>
     <servers />
   </component>
