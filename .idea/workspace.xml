@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec8889de-7d0e-4093-af14-284549cee93e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ContiguousSum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SCD-Assignment-02/QuickSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SCD-Assignment-02/QuickSort.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuickSort.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,13 +101,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RunManager" selected="Application.QuickSort">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="DayOfBirth" />
+  <component name="RunManager" selected="Application.ContiguousSum">
+    <configuration name="ContiguousSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ContiguousSum" />
       <module name="SCD-Assignment-02" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -142,11 +139,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ContiguousSum" />
         <item itemvalue="Application.QuickSort" />
         <item itemvalue="Application.StopWords" />
         <item itemvalue="Application.StackSort" />
         <item itemvalue="Application.SortStack" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -161,7 +158,8 @@
       <workItem from="1664913645136" duration="867000" />
       <workItem from="1664958494347" duration="1084000" />
       <workItem from="1665248107978" duration="9413000" />
-      <workItem from="1665314428957" duration="7836000" />
+      <workItem from="1665314428957" duration="8187000" />
+      <workItem from="1665402456521" duration="1599000" />
     </task>
     <servers />
   </component>
