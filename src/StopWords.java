@@ -1,5 +1,10 @@
 import java.util.*;
 public class StopWords {
+    /*
+    * This class finds the stop words from the given text
+    * and store the count against the stop words in hashmap
+    * */
+
 
     private ArrayList<String> stopWords;
     private HashMap<String,Integer> stopMap;
@@ -9,6 +14,7 @@ public class StopWords {
         story = "";
         stopWords = new ArrayList<String>();
         stopMap = new HashMap<String,Integer>();
+        // initlialzed the array of stop words
         String[] arr={"i",
                 "me", "my", "myself", "we", "our", "ours", "ourselves", "you", "your",
                 "yours", "yourself", "yourselves", "he", "him", "his", "himself", "she",
@@ -26,38 +32,53 @@ public class StopWords {
                 "same", "so", "than", "too", "very", "s", "t", "can", "will", "just",
                 "don", "should", "now"};
 
-        stopWords.addAll(Arrays.asList(arr));
+        stopWords.addAll(Arrays.asList(arr)); // setting all of the stop words in arraylist
     }
 
+    // prints the all of stop words
     void printStopWord(){
         for (String stopWord : stopWords){
             System.out.println(stopWord);
         }
     }
 
+    // this function returns true if the given character is not
+    // a punctuation character else returns false
+    boolean checkPunctuation(char character){
+        if (character == ',' ||character == '.' ||
+                character == '"' ||character == '\'' ||
+                character == '?')
+        {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+    // sets the story excluding the punctuation
     void setStory(String story){
        for (int index =0; index < story.length(); index++){
-           if (story.charAt(index) != ',' ||story.charAt(index) != '.' ||
-                   story.charAt(index) != '"' ||story.charAt(index) != '\'' ||
-                   story.charAt(index) != '?');
+           if (checkPunctuation(story.charAt(index)))
            {
                this.story = this.story + story.charAt(index);
            }
        }
     }
 
+    // prints the saved story
     void tellStory(){
         System.out.println(story);
     }
 
+    // this function counts the stop words
+    // and set the count against the key(stopword) in hashmap
     void findStopWords(String story){
-        //this.story = story;
         for(String stpWrd : stopWords){
             int count = 0;
             StringTokenizer sT = new StringTokenizer(story, " ");
 
             while( sT.hasMoreElements()) {
-
 
                 String str =sT.nextToken();
                 if (str.equals(stpWrd)) {
@@ -72,12 +93,15 @@ public class StopWords {
         }
     }
 
+    // prints the count of all stop words
     void printAllStopWordsCount() {
        for(String stopWord: stopWords){
            System.out.println("Word: " + stopWord+ " " + stopMap.get(stopWord));
        }
     }
 
+    // prints the count of stop words which are
+    // present only in story
     void printOnlyStopWordsCount(){
        StringTokenizer str = new StringTokenizer(story," ");
        while(str.hasMoreTokens()){
@@ -94,12 +118,9 @@ public class StopWords {
 
     public static void main(String[] args) {
         StopWords sw = new StopWords();
-        //String story = "Once upon a time, there lived a crow in a forest close to a town.";
-        String story = ",.?'";
+        String story = "Once upon a time, there lived a crow in a forest close to a town.";
         sw.setStory(story);
-        sw.tellStory();
-        //sw.findStopWords(story);
-        //sw.print();
-        //sw.printOnlyStopWordsCount();
+        sw.findStopWords(story);
+        sw.printOnlyStopWordsCount();
     }
 }

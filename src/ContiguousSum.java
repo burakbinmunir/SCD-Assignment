@@ -39,8 +39,6 @@ public class ContiguousSum{
     public int findLargestContiguousSum(){
         int sum = Integer.MIN_VALUE;
         int maxEnding = 0, index =0;
-
-
         while ( index < numbers.size()){
 
             maxEnding+= numbers.get(index);

@@ -4,6 +4,7 @@
     <list default="true" id="ec8889de-7d0e-4093-af14-284549cee93e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SCD-Assignment-02/StopWords.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SCD-Assignment-02/StopWords.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CountSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CountSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StopWords.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StopWords.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,16 +102,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RunManager" selected="Application.StopWords">
-    <configuration name="Balance" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Balance" />
+  <component name="RunManager" selected="Application.CountSort">
+    <configuration name="ContiguousSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ContiguousSum" />
       <module name="SCD-Assignment-02" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContiguousSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ContiguousSum" />
+    <configuration name="CountSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CountSort" />
       <module name="SCD-Assignment-02" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -139,11 +140,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CountSort" />
         <item itemvalue="Application.StopWords" />
         <item itemvalue="Application.StackSort" />
         <item itemvalue="Application.ContiguousSum" />
         <item itemvalue="Application.DayOfBirth" />
-        <item itemvalue="Application.Balance" />
       </list>
     </recent_temporary>
   </component>
@@ -161,7 +162,8 @@
       <workItem from="1665314428957" duration="8187000" />
       <workItem from="1665402456521" duration="2553000" />
       <workItem from="1665425247005" duration="4392000" />
-      <workItem from="1665479437892" duration="3759000" />
+      <workItem from="1665479437892" duration="3800000" />
+      <workItem from="1665506964298" duration="2057000" />
     </task>
     <servers />
   </component>
@@ -190,6 +192,7 @@
         <watch expression="array.size()" language="JAVA" />
         <watch expression="str" language="JAVA" />
         <watch expression="toString()" language="JAVA" />
+        <watch expression="story.charAt(index)" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
