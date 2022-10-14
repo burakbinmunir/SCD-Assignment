@@ -6,9 +6,10 @@ public class ContiguousSum{
 
     ContiguousSum()
     {
-        numbers = new ArrayList<Integer>();
+        numbers = new ArrayList<Integer>(); // initialization
     }
 
+    // this function inputs array
     void addElements(){
         int size =0;
         System.out.print("How many elements you want to input in array: ");
@@ -28,6 +29,7 @@ public class ContiguousSum{
         }
     }
 
+    // printing array
     void printArray(){
         System.out.println("Printing array");
 
@@ -36,8 +38,9 @@ public class ContiguousSum{
         }
     }
 
+    // algorithm for finding the largest contiguous sum
     public int findLargestContiguousSum(){
-        int sum = Integer.MIN_VALUE;
+        int sum = Integer.MIN_VALUE; // setting sum to minimum
         int maxEnding = 0, index =0;
         while ( index < numbers.size()){
 
@@ -60,6 +63,6 @@ public class ContiguousSum{
         ContiguousSum cSum = new ContiguousSum();
         cSum.addElements();
         cSum.printArray();
-        System.out.println("Maximum Contigous sum is: "+ cSum.findLargestContiguousSum());
+        System.out.println("Maximum Contiguous sum is: "+ cSum.findLargestContiguousSum());
     }
 }

@@ -6,7 +6,27 @@ public class Balance {
     Balance(){
         stack = new Stack<String>();
     }
+/*
+    void balanceEquation(String equation){
+        Stack<char> openBrackets = new Stack<char>();
+        Stack<char> closeBrackets = new Stack<char>();
 
+        for (int index =0; index < equation.length(); index++){
+            if (equation.charAt(index) == '(')
+                openBrackets.push(equation.charAt(index));
+
+            if (equation.charAt(index) == ')')
+                closeBrackets.push(equation.charAt(index));
+        }
+        // checking uneven case
+        if (openBrackets.size()%2 == 0 && closeBrackets.size()%2== 0){
+            System.out.println("Even");
+        }
+        else {
+
+        }
+    }
+*/
     public void printStack(){
         for (String str : stack){
             System.out.println(str);

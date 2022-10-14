@@ -107,12 +107,7 @@ public class StopWords {
        while(str.hasMoreTokens()){
           String token= str.nextToken();
           Integer count = stopMap.get(token);
-          if (count == null) {
-              System.out.println("Word: " + token + " " + 0);
-          }
-          else {
-              System.out.println("Word: " + token + " " + count);
-          }
+           System.out.println("Word: " + token + " " + Objects.requireNonNullElse(count, 0));
        }
     }
 
