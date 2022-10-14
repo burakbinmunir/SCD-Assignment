@@ -1,0 +1,170 @@
+[1mdiff --git a/.idea/workspace.xml b/.idea/workspace.xml[m
+[1mindex 69ae4c2..0966128 100644[m
+[1m--- a/.idea/workspace.xml[m
+[1m+++ b/.idea/workspace.xml[m
+[36m@@ -3,8 +3,10 @@[m
+   <component name="ChangeListManager">[m
+     <list default="true" id="ec8889de-7d0e-4093-af14-284549cee93e" name="Changes" comment="">[m
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />[m
+[31m-      <change beforePath="$PROJECT_DIR$/out/production/SCD-Assignment-02/DayOfBirth.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SCD-Assignment-02/DayOfBirth.class" afterDir="false" />[m
+[31m-      <change beforePath="$PROJECT_DIR$/src/DayOfBirth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DayOfBirth.java" afterDir="false" />[m
+[32m+[m[32m      <change beforePath="$PROJECT_DIR$/out/production/SCD-Assignment-02/ContiguousSum.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SCD-Assignment-02/ContiguousSum.class" afterDir="false" />[m
+[32m+[m[32m      <change beforePath="$PROJECT_DIR$/out/production/SCD-Assignment-02/StackSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SCD-Assignment-02/StackSort.class" afterDir="false" />[m
+[32m+[m[32m      <change beforePath="$PROJECT_DIR$/src/ContiguousSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ContiguousSum.java" afterDir="false" />[m
+[32m+[m[32m      <change beforePath="$PROJECT_DIR$/src/StackSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StackSort.java" afterDir="false" />[m
+     </list>[m
+     <option name="SHOW_DIALOG" value="false" />[m
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />[m
+[36m@@ -101,7 +103,7 @@[m
+     <property name="WebServerToolWindowFactoryState" value="false" />[m
+     <property name="nodejs_package_manager_path" value="npm" />[m
+   </component>[m
+[31m-  <component name="RunManager" selected="Application.DayOfBirth">[m
+[32m+[m[32m  <component name="RunManager" selected="Application.StackSort">[m
+     <configuration name="ContiguousSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">[m
+       <option name="MAIN_CLASS_NAME" value="ContiguousSum" />[m
+       <module name="SCD-Assignment-02" />[m
+[36m@@ -109,15 +111,15 @@[m
+         <option name="Make" enabled="true" />[m
+       </method>[m
+     </configuration>[m
+[31m-    <configuration name="CountSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">[m
+[31m-      <option name="MAIN_CLASS_NAME" value="CountSort" />[m
+[32m+[m[32m    <configuration name="DayOfBirth" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">[m
+[32m+[m[32m      <option name="MAIN_CLASS_NAME" value="DayOfBirth" />[m
+       <module name="SCD-Assignment-02" />[m
+       <method v="2">[m
+         <option name="Make" enabled="true" />[m
+       </method>[m
+     </configuration>[m
+[31m-    <configuration name="DayOfBirth" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">[m
+[31m-      <option name="MAIN_CLASS_NAME" value="DayOfBirth" />[m
+[32m+[m[32m    <configuration name="StackSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">[m
+[32m+[m[32m      <option name="MAIN_CLASS_NAME" value="StackSort" />[m
+       <module name="SCD-Assignment-02" />[m
+       <method v="2">[m
+         <option name="Make" enabled="true" />[m
+[36m@@ -139,11 +141,11 @@[m
+     </configuration>[m
+     <recent_temporary>[m
+       <list>[m
+[32m+[m[32m        <item itemvalue="Application.StackSort" />[m
+         <item itemvalue="Application.DayOfBirth" />[m
+         <item itemvalue="Application.ContiguousSum" />[m
+         <item itemvalue="Application.StopWords" />[m
+         <item itemvalue="Application.Test" />[m
+[31m-        <item itemvalue="Application.CountSort" />[m
+       </list>[m
+     </recent_temporary>[m
+   </component>[m
+[36m@@ -166,7 +168,7 @@[m
+       <workItem from="1665567357431" duration="928000" />[m
+       <workItem from="1665652795487" duration="57000" />[m
+       <workItem from="1665688398467" duration="1420000" />[m
+[31m-      <workItem from="1665762280015" duration="645000" />[m
+[32m+[m[32m      <workItem from="1665762280015" duration="1489000" />[m
+     </task>[m
+     <servers />[m
+   </component>[m
+[1mdiff --git a/out/production/SCD-Assignment-02/ContiguousSum.class b/out/production/SCD-Assignment-02/ContiguousSum.class[m
+[1mindex b5c36e5..2c22dc1 100644[m
+Binary files a/out/production/SCD-Assignment-02/ContiguousSum.class and b/out/production/SCD-Assignment-02/ContiguousSum.class differ
+[1mdiff --git a/out/production/SCD-Assignment-02/StackSort.class b/out/production/SCD-Assignment-02/StackSort.class[m
+[1mindex 96eabc8..87711c4 100644[m
+Binary files a/out/production/SCD-Assignment-02/StackSort.class and b/out/production/SCD-Assignment-02/StackSort.class differ
+[1mdiff --git a/src/ContiguousSum.java b/src/ContiguousSum.java[m
+[1mindex b87a6f6..5d3338e 100644[m
+[1m--- a/src/ContiguousSum.java[m
+[1m+++ b/src/ContiguousSum.java[m
+[36m@@ -10,7 +10,7 @@[m [mpublic class ContiguousSum{[m
+     }[m
+ [m
+     // this function inputs array[m
+[31m-    void addElements(){[m
+[32m+[m[32m    public void addElements(){[m
+         int size =0;[m
+         System.out.print("How many elements you want to input in array: ");[m
+ [m
+[36m@@ -30,7 +30,7 @@[m [mpublic class ContiguousSum{[m
+     }[m
+ [m
+     // printing array[m
+[31m-    void printArray(){[m
+[32m+[m[32m   public void printArray(){[m
+         System.out.println("Printing array");[m
+ [m
+         for (int number : numbers){[m
+[1mdiff --git a/src/StackSort.java b/src/StackSort.java[m
+[1mindex ad6476f..51a3bbb 100644[m
+[1m--- a/src/StackSort.java[m
+[1m+++ b/src/StackSort.java[m
+[36m@@ -1,27 +1,37 @@[m
+ import java.util.Scanner;[m
+ import java.util.Stack;[m
+ [m
+[31m-// assumption we will only sort the stack which would be of numbers[m
+[32m+[m[32m// assumption we will only sort the stack which would be of Integer numbers[m
+ public class StackSort {[m
+     private Stack<Integer> stack;[m
+ [m
+     StackSort(){[m
+[31m-        stack = new Stack<Integer>();[m
+[32m+[m[32m        stack = new Stack<Integer>();// Initialization[m
+     }[m
+ [m
+[32m+[m[32m    // this function inputs the stack elements[m
+     void inputStack(){[m
+         int number;[m
+[31m-        System.out.println("Enter elements in stack. Press -1 for stopping");[m
+[32m+[m[32m        int size = 0;[m
+[32m+[m[32m        System.out.println("How many numbers you want to add in stack: ");[m
+ [m
+         Scanner scanner = new Scanner(System.in);[m
+[31m-        number = scanner.nextInt();[m
+[31m-[m
+[31m-        while(number != -1){[m
+[31m-            stack.push(number);[m
+[31m-            number = scanner.nextInt();[m
+[32m+[m[32m        size = scanner.nextInt();[m
+[32m+[m[32m        if (size > 0) { // in case size is positive[m
+[32m+[m
+[32m+[m[32m            int index = 0;[m
+[32m+[m[32m            while (index < size) {[m
+[32m+[m[32m                number = scanner.nextInt();[m
+[32m+[m[32m                stack.push(number);[m
+[32m+[m[32m                index++;[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+[32m+[m[32m        else {[m
+[32m+[m[32m            System.out.println("BuBye");[m
+         }[m
+     }[m
+ [m
+[32m+[m[32m    // this function prints the elements of stack[m
+     void printStack(){[m
+ [m
+         System.out.println("Printing stack");[m
+[36m@@ -31,6 +41,7 @@[m [mpublic class StackSort {[m
+         }[m
+     }[m
+ [m
+[32m+[m[32m    // this function sorts the stack[m
+     Stack<Integer> sortStack(){[m
+ [m
+         Stack<Integer> sortedStack = new Stack<Integer>();[m
+[36m@@ -48,7 +59,7 @@[m [mpublic class StackSort {[m
+                 sortedStack.push(element);[m
+             }[m
+         }[m
+[31m-[m
+[32m+[m[32m        stack = sortedStack;[m
+         return sortedStack;[m
+     }[m
+ [m
+[36m@@ -62,6 +73,5 @@[m [mpublic class StackSort {[m
+         for (int num : stck){[m
+             System.out.println(num);[m
+         }[m
+[31m-[m
+     }[m
+ }[m
