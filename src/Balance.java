@@ -1,110 +1,95 @@
+import java.util.Scanner;
 import java.util.Stack;
 
 public class Balance {
-    private Stack<String> stack;
 
-    Balance(){
-        stack = new Stack<String>();
-    }
-/*
-    void balanceEquation(String equation){
-        Stack<char> openBrackets = new Stack<char>();
-        Stack<char> closeBrackets = new Stack<char>();
+    public static int evaluate(String expression) {
+        char[] tokens = expression.toCharArray();
 
-        for (int index =0; index < equation.length(); index++){
-            if (equation.charAt(index) == '(')
-                openBrackets.push(equation.charAt(index));
+        // Stack of numbers
+        Stack<Integer> values = new Stack<Integer>();
 
-            if (equation.charAt(index) == ')')
-                closeBrackets.push(equation.charAt(index));
-        }
-        // checking uneven case
-        if (openBrackets.size()%2 == 0 && closeBrackets.size()%2== 0){
-            System.out.println("Even");
-        }
-        else {
+        // Stack of Operators: 'ops'
+        Stack<Character> ops = new Stack<Character>();
 
-        }
-    }
-*/
-    public void printStack(){
-        for (String str : stack){
-            System.out.println(str);
-        }
-    }
+        for (int i = 0; i < tokens.length; i++) {
+            if (tokens[i] == ' ') // if space
+                continue;
 
-    public void add(String n){
-        stack.push(n);
-    }
+            if (tokens[i] >= '0' && tokens[i] <= '9') // if number
+            {
+                StringBuffer sbuf = new StringBuffer();
 
-    int doCalculate(int num1, int num2, String operator){
-        if (operator.equals("+")){
-            return num1 + num2;
-        }
-
-        if (operator.equals("-")){
-            return num1 - num2;
-        }
-        if (operator.equals("/")){
-            if (num2 > 0) {
-                return num1 / num2;
-            }
-            return 0;
-        }
-        if (operator.equals("*")){
-            return num1 * num2;
-        }
-        System.out.println("Wrong operator");
-        return -1;
-    }
-
-    public int compute(){
-        if (!stack.isEmpty()) {
-            reverseStack();
-            while (true) {
-                int num1 = Integer.parseInt(stack.pop());
-                String operator = stack.pop();
-                int num2 = Integer.parseInt(stack.pop());
-                int result = doCalculate(num1, num2, operator);
-
-                if (stack.isEmpty()) {
-                    return result;
-                } else {
-                    stack.push(String.valueOf(result));
+                while (i < tokens.length && tokens[i] >= '0' && tokens[i] <= '9') {
+                    sbuf.append(tokens[i++]);
                 }
+                values.push(Integer.parseInt(sbuf.toString())); // converting all numbers into there equivalent integer values
+
+                i--;
+            } else if (tokens[i] == '(')  // if opening bracket
+                ops.push(tokens[i]);
+            else if (tokens[i] == ')') // if closing bracket
+            {
+                while (ops.peek() != '(') {
+                    values.push(applyOp(ops.pop(), values.pop(), values.pop()));
+                }
+                ops.pop();
+            }
+
+            // if operator
+            else if (tokens[i] == '+' || tokens[i] == '-' || tokens[i] == '*' || tokens[i] == '/') {
+                while (!ops.empty() && hasPrecedence(tokens[i], ops.peek())) {
+                    values.push(applyOp(ops.pop(), values.pop(), values.pop()));
+                }
+                ops.push(tokens[i]);
             }
         }
-        else {
-            System.out.println("Stack is empty");
-            return 0;
+
+        while (!ops.empty()){
+            values.push(applyOp(ops.pop(), values.pop(), values.pop()));
         }
+        return values.pop();
     }
 
-    void reverseStack(){
-        Stack<String> newStack = new Stack<String>();
-        for(String ele : stack){
-            newStack.push(ele);
-        }
-        stack.clear();
-        for (String ele: newStack ){
-            stack.push(ele);
-        }
+    // Returns true if 'op2' has higher
+    // or same precedence as 'op1',
+    // otherwise returns false.
+    public static boolean hasPrecedence(char op1, char op2){
+        if (op2 == '(' || op2 == ')')
+            return false;
+        if ((op1 == '*' || op1 == '/') && (op2 == '+' || op2 == '-'))
+            return false;
+        else
+            return true;
     }
 
+    // A utility method to apply an
+    // operator 'op' on operands 'a'
+    // and 'b'. Return the result.
+    public static int applyOp(char op, int b, int a) {
+        switch (op)
+        {
+            case '+':
+                return a + b;
+            case '-':
+                return a - b;
+            case '*':
+                return a * b;
+            case '/':
+                if (b == 0)
+                    throw new
+                            UnsupportedOperationException(
+                            "Cannot divide by zero");
+                return a / b;
+        }
+        return 0;
+    }
     public static void main(String[] arg){
-        Balance balance = new Balance();
-       balance.add("2");
-        balance.add("+");
-        balance.add("2");
-        balance.add("*");
-        balance.add("2");
-        balance.add("/");
-        balance.add("2");
-        balance.add("*");
-        balance.add("2");
+        String expression;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the expression: ");
+        expression = sc.nextLine();
 
-        int sum = balance.compute();
-        System.out.println(sum);
-
+        System.out.println(evaluate(expression));
     }
 }
