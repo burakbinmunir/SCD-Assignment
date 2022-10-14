@@ -10,7 +10,7 @@ public class ContiguousSum{
     }
 
     // this function inputs array
-    void addElements(){
+    public void addElements(){
         int size =0;
         System.out.print("How many elements you want to input in array: ");
 
@@ -30,7 +30,7 @@ public class ContiguousSum{
     }
 
     // printing array
-    void printArray(){
+   public void printArray(){
         System.out.println("Printing array");
 
         for (int number : numbers){

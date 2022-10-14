@@ -1,27 +1,37 @@
 import java.util.Scanner;
 import java.util.Stack;
 
-// assumption we will only sort the stack which would be of numbers
+// assumption we will only sort the stack which would be of Integer numbers
 public class StackSort {
     private Stack<Integer> stack;
 
     StackSort(){
-        stack = new Stack<Integer>();
+        stack = new Stack<Integer>();// Initialization
     }
 
+    // this function inputs the stack elements
     void inputStack(){
         int number;
-        System.out.println("Enter elements in stack. Press -1 for stopping");
+        int size = 0;
+        System.out.println("How many numbers you want to add in stack: ");
 
         Scanner scanner = new Scanner(System.in);
-        number = scanner.nextInt();
+        size = scanner.nextInt();
+        if (size > 0) { // in case size is positive
 
-        while(number != -1){
-            stack.push(number);
-            number = scanner.nextInt();
+            int index = 0;
+            while (index < size) {
+                number = scanner.nextInt();
+                stack.push(number);
+                index++;
+            }
+        }
+        else {
+            System.out.println("BuBye");
         }
     }
 
+    // this function prints the elements of stack
     void printStack(){
 
         System.out.println("Printing stack");
@@ -31,6 +41,7 @@ public class StackSort {
         }
     }
 
+    // this function sorts the stack
     Stack<Integer> sortStack(){
 
         Stack<Integer> sortedStack = new Stack<Integer>();
@@ -48,7 +59,7 @@ public class StackSort {
                 sortedStack.push(element);
             }
         }
-
+        stack = sortedStack;
         return sortedStack;
     }
 
@@ -62,6 +73,5 @@ public class StackSort {
         for (int num : stck){
             System.out.println(num);
         }
-
     }
 }

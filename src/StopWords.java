@@ -95,27 +95,37 @@ public class StopWords {
 
     // prints the count of all stop words
     void printAllStopWordsCount() {
-       for(String stopWord: stopWords){
-           System.out.println("Word: " + stopWord+ " " + stopMap.get(stopWord));
-       }
+        for (String stopWord: stopWords){
+            Integer count = stopMap.get(stopWord);
+            if (count == null) {
+                System.out.println(stopWord + " " + 0);
+            }
+            else {
+                System.out.println(stopWord + " " + count);
+            }
+        }
     }
 
     // prints the count of stop words which are
     // present only in story
     void printOnlyStopWordsCount(){
-       StringTokenizer str = new StringTokenizer(story," ");
-       while(str.hasMoreTokens()){
-          String token= str.nextToken();
-          Integer count = stopMap.get(token);
-           System.out.println("Word: " + token + " " + Objects.requireNonNullElse(count, 0));
-       }
+           for (String stopWord: stopWords){
+            Integer count = stopMap.get(stopWord);
+            if (count != null) {
+                System.out.println(stopWord + " " + count);
+            }
+        }
     }
 
     public static void main(String[] args) {
         StopWords sw = new StopWords();
-        String story = "Once upon a time, there lived a crow in a forest close to a town.";
+        String story;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter your story: ");
+        story = scanner.nextLine();
         sw.setStory(story);
         sw.findStopWords(story);
-        sw.printOnlyStopWordsCount();
+        //sw.printOnlyStopWordsCount();
+        sw.printAllStopWordsCount();
     }
 }
