@@ -1,95 +1,144 @@
-import java.util.Scanner;
-import java.util.Stack;
 
 public class Balance {
+    static String balance(String expression)
+    {
 
-    public static int evaluate(String expression) {
-        char[] tokens = expression.toCharArray();
-
-        // Stack of numbers
-        Stack<Integer> values = new Stack<Integer>();
-
-        // Stack of Operators: 'ops'
-        Stack<Character> ops = new Stack<Character>();
-
-        for (int i = 0; i < tokens.length; i++) {
-            if (tokens[i] == ' ') // if space
-                continue;
-
-            if (tokens[i] >= '0' && tokens[i] <= '9') // if number
-            {
-                StringBuffer sbuf = new StringBuffer();
-
-                while (i < tokens.length && tokens[i] >= '0' && tokens[i] <= '9') {
-                    sbuf.append(tokens[i++]);
-                }
-                values.push(Integer.parseInt(sbuf.toString())); // converting all numbers into there equivalent integer values
-
-                i--;
-            } else if (tokens[i] == '(')  // if opening bracket
-                ops.push(tokens[i]);
-            else if (tokens[i] == ')') // if closing bracket
-            {
-                while (ops.peek() != '(') {
-                    values.push(applyOp(ops.pop(), values.pop(), values.pop()));
-                }
-                ops.pop();
-            }
-
-            // if operator
-            else if (tokens[i] == '+' || tokens[i] == '-' || tokens[i] == '*' || tokens[i] == '/') {
-                while (!ops.empty() && hasPrecedence(tokens[i], ops.peek())) {
-                    values.push(applyOp(ops.pop(), values.pop(), values.pop()));
-                }
-                ops.push(tokens[i]);
-            }
-        }
-
-        while (!ops.empty()){
-            values.push(applyOp(ops.pop(), values.pop(), values.pop()));
-        }
-        return values.pop();
-    }
-
-    // Returns true if 'op2' has higher
-    // or same precedence as 'op1',
-    // otherwise returns false.
-    public static boolean hasPrecedence(char op1, char op2){
-        if (op2 == '(' || op2 == ')')
-            return false;
-        if ((op1 == '*' || op1 == '/') && (op2 == '+' || op2 == '-'))
-            return false;
-        else
-            return true;
-    }
-
-    // A utility method to apply an
-    // operator 'op' on operands 'a'
-    // and 'b'. Return the result.
-    public static int applyOp(char op, int b, int a) {
-        switch (op)
+        String tempexpression = expression;
+        StackUsingLinkedlist list1 =new StackUsingLinkedlist();
+        StackUsingLinkedlist list2=new StackUsingLinkedlist();
+        int len =tempexpression.length();
+        for(int i=0;i<len;i++)
         {
-            case '+':
-                return a + b;
-            case '-':
-                return a - b;
-            case '*':
-                return a * b;
-            case '/':
-                if (b == 0)
-                    throw new
-                            UnsupportedOperationException(
-                            "Cannot divide by zero");
-                return a / b;
-        }
-        return 0;
-    }
-    public static void main(String[] arg){
-        String expression;
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the expression: ");
-        expression = sc.nextLine();
+            if(tempexpression.charAt(i)=='(')
+            {
+                list1.push(i,tempexpression.charAt(i));
+            }
+            else
+            {
+                if(tempexpression.charAt(i)==')')
+                {
+                    if(list1.peek()!=null && list1.peek().data=='(' && list2.peek().data!='/' && list2.peek().data!='*' && list2.peek().data!='+' && list2.peek().data!='%' && list2.peek().data!='-')
+                    {
+                        list1.pop();
+                    }
+                    else
+                    {
+                        list1.push(i,tempexpression.charAt(i));
+                    }
+                }
+                else
+                {
+                    list2.push(i,tempexpression.charAt(i));
+                }
 
-        System.out.println(evaluate(expression));
+            }
+        }
+        if(!list1.isEmpty())
+        {
+            if (list1.top == null) {
+                System.out.println("\nStack Underflow");
+            }
+            else {
+                StackUsingLinkedlist.Node temp = list1.top;
+                while (temp != null) {
+                    tempexpression = tempexpression.substring(0,temp.index)+' '+tempexpression.substring(temp.index + 1);
+                    temp = temp.link;
+                }
+                tempexpression=tempexpression.replaceAll("\\s", "");
+            }
+        }
+        return tempexpression;
+    }
+
+    public static void main(String[] args) {
+        String exp = "(2+2))";
+        System.out.println(balance(exp));
+    }
+
+}
+// Create Stack Using Linked list
+class StackUsingLinkedlist {
+
+
+    public class Node {
+
+        char data; // integer data
+        int index;
+        Node link; // reference variable Node type
+
+    }
+
+    Node top;
+
+    StackUsingLinkedlist() { this.top = null; }
+
+
+    public void push(int ind,char x) // insert at the beginning
+    {
+        // create new node temp and allocate memory
+        Node temp = new Node();
+
+        // check if stack (heap) is full. Then inserting an
+        //  element would lead to stack overflow
+        if (temp == null) {
+            System.out.print("\nHeap Overflow");
+            return;
+        }
+
+        // initialize data into temp data field
+        temp.index=ind;
+        temp.data = x;
+
+        // put top reference into temp link
+        temp.link = top;
+
+        // update top reference
+        top = temp;
+    }
+
+    public boolean isEmpty() { return top == null; }
+
+    public Node peek()
+    {
+        // check for empty stack
+        if (!isEmpty()) {
+            return top;
+        }
+        else {
+            return null;
+        }
+    }
+
+    public void pop()
+    {
+        // check for stack underflow
+        if (top == null) {
+            System.out.print("\nStack Underflow");
+            return;
+        }
+
+        // update the top pointer to point to the next node
+        top = (top).link;
+    }
+
+    public void display()
+    {
+        // check for stack underflow
+        if (top == null) {
+            return;
+        }
+        else {
+            Node temp = top;
+            while (temp != null) {
+
+                // print node data
+                System.out.print(temp.data);
+                System.out.println(temp.index);
+                // assign temp link to temp
+                temp = temp.link;
+                if(temp != null)
+                    System.out.print(" -> ");
+            }
+        }
     }
 }
