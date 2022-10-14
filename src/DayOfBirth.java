@@ -5,11 +5,13 @@ import java.util.Scanner;
 
 public class DayOfBirth {
 
-    public static String calculateBornDay(String s1) throws ParseException {
+    // This function parses the string date into the date
+    // then we can utilize Date class function to get the format of day
+    public static String calculateBornDay(String stringDate) throws ParseException { // might throw exception if data to be parsed is in wrong format
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
         SimpleDateFormat tempDate = new SimpleDateFormat("EEEE");
 
-        Date date = simpleDateFormat.parse(s1);
+        Date date = simpleDateFormat.parse(stringDate);
         String day = tempDate.format(date);
         return day.toUpperCase();
     }
